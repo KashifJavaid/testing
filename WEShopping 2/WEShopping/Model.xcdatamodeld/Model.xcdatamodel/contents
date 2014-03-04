@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="12F45" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Category" representedClassName="category" syncable="YES">
+        <attribute name="categoryName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateModified" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="heldby" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Items" inverseName="inCategory" inverseEntity="Items" syncable="YES"/>
+    </entity>
+    <entity name="DeletedItems" representedClassName="DeletedItems" syncable="YES">
+        <attribute name="webID" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Items" representedClassName="items" syncable="YES">
+        <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateModified" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="itemName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="webid" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="webUpdatedTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="inCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="heldby" inverseEntity="Category" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Category" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Items" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="DeletedItems" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
